@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-image: url("{% static 'images/chef.jpg' %}");
+            background-repeat:no-repeat;
+            background-size:cover;
+            
+        }
+        h1{
+            text-align: center;
+            color: aqua;
+            
+        }
+        h2{
+            text-align: center;
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <center>
+    <h1>Search Results</h1>
+    {% if dishes %}
+    <ul>
+        {% for dish in dishes %}
+            <h2><li>{{ dish }}</li></h2>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <p>No dishes found.</p>
+    {% endif %}
+    
+    </center>
+</body>
+</html>
